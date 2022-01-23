@@ -4,15 +4,12 @@ import sys
 import re
 
 if __name__ == "__main__":
-    n = int(sys.stdin.readline().strip())
-
     numbers = []
-    while n > 0:
+    for _ in range(int(sys.stdin.readline().strip())):
         line = sys.stdin.readline().strip()
 
         # 받은 문장에서 1 ~ 100자의 숫자 뽑아내기
         numbers.extend(list(map(int, re.findall(r'\d{1,100}', line))))
-        n -= 1
 
     numbers = sorted(numbers)
 
